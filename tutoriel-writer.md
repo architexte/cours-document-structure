@@ -11,7 +11,7 @@ Pré-requis
 * Nous utiliserons les [expressions régulières](https://help.libreoffice.org/Common/List_of_Regular_Expressions/fr).
 
 **Cas.** Un chercheur a construit un inventaire de porcelaines. Le travail scientifique est rigoureux, mais l’édition ne permet de générer ni une impression de qualité, ni un export (PDF, HTML) convenable. Surtout, nous ne pouvons pas contrôler la qualité des données saisies (nombre de pièces décrites dans l’inventaire, dates, etc.), ou exporter les champs utiles à l’exploitation scientifique de l’inventaire. Nous chercherons par exemple à visualiser la distribution chronologique de cet inventaire.  
-NB. Le document `inventaire.doc` utilisé pour l’exercice ne correspond pas à l’inventaire intégral.
+NB. Le document `inventaire.doc` utilisé pour l’exercice est un extrait.
 
 La restructuration du fichier est l’occasion d’aborder :
 * les formats de fichier (`.doc`, `.docx`, `.odt`)
@@ -55,9 +55,9 @@ Plutôt que de formater manuellement les titre (changement de police, graisse, t
 ### Suppression des paragraphes vides
 **Problème.** Nous avons de nombreux paragraphes vides gênants pour la reprise du document. L’espacement entre paragraphes est une propriété du style de paragraphe (voir plus bas), mais ne doit pas être géré avec ce type de paragraphes vides.  
 Pour supprimer ces paragraphes vides :
-* **Rechercher : ** `^$`  
+* **Rechercher :** `^$`  
 NB : penser à cocher la case `Expressions régulières` dans les `Autres options`de la boîte `Rechercher & remplacer`.
-* **remplacer : ** `laisser le champ vide`
+* **remplacer :** `laisser le champ vide`
 
 ![copie écran](./img/2-paragraphes-vides.png "supprimer les paragraphes vides")
 
