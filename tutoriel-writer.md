@@ -73,39 +73,44 @@ Une même recherche sur les styles `Titre 1` permet de constater que le style es
 ![copie écran](./img/3-styles-confus-voirTOC.png "Table des matières fautive à cause des styles Titre 1 non cohérents")
 
 **Choix.** Dans ce document le stylage est source de confusion. Nous prenons la décision de le supprimer pour le reconstruire.  
-**ATTENTION.** Ce choix est justifié dans le contexte de cet exercice (le fichier est vraiment mal structuré, c’est utile pédagogiquement, et surtout, nous pourrons restructurer le document grâce à d’autres éléments de l’édition). Il faut toujours analyser le document avant d’adopter une stratégie de reprise.
+**ATTENTION.** Ce choix est justifié dans le contexte de cet exercice (le fichier est vraiment mal structuré, c’est utile pédagogiquement, et surtout, nous pourrons restructurer le document grâce à d’autres éléments de l’édition). **Il faut toujours analyser le document avant d’adopter une stratégie de reprise**.
 
 **Basculer tous les styles de paragraphes du document en `Style par défaut` (sauf `Note de bas de page`).**
 * Ouvrir la boîte `Chercher et remplacer…`, dans `Autres options`, cocher `Styles de paragraphe`.
 * En `Rechercher`, sélectionner le style à remplacer, en `Remplacer`, sélectionner `Style par défaut`.
 * Répéter l’opération pour chaque style à supprimer (tous sauf `Note de bas de page`).
 Pour `Titre 1`, avant remplacer :  
+
 ![copie écran](./img/4-supprTitre1-avant.png "Table des matières fautive à cause des styles Titre 1")  
+
 Après : noter la modification de la table des matières dans le `Navigateur`.  
+
 ![copie écran](./img/4-supprTitre1-apres.png "La table des matières est automatiquement modifiée dans la navigateur à la suppression des Titre 1")  
 
 ### Initialiser l’alignement des paragraphes
-**Problème.** La mise en forme reste assez baroque, avec des "effets d’escalier" (cf gestion du restrait des paragraphes). On choisit de rétablir l’alignement à gauche.
+**Problème.** La mise en forme reste assez baroque, avec des "effets d’escalier" (cf gestion du retrait des paragraphes). On choisit de rétablir l’alignement à gauche.
 * Sélectionner tout le texte (`Édition > Tout sélectionner` ou `CRTL+A` ou `cmd+A`).
-* `Format > Paragraphe…`: redéfinir à 0 les valeur de retrait  
+* `Format > Paragraphe…`: redéfinir à 0 les valeur de retrait.
 
 ![copie écran](./img/5-restrait-escalier-avant.png "Effet d’escalier lié à la mauvaise gestion des retraits")  
 ![copie écran](./img/5-retrait-reprise.png "Corriger le retait des paragraphes")  
 ![copie écran](./img/5-retrait-escalier-apres.png "Retrait des paragraphes, vue corrigée.")  
 
 ### Suppression de la numérotion inscrite manuellement par l’auteur de l’inventaire
-**Problème.** Certaines entrées de l’inventaire contiennent plusieurs objets (cotes). L’auteur a inscrit une numérotation manuellement pour compter ces entrées. Cette numérotation est problématique : on ne peut pas la contrôler ; on ne peut pas insérer une nouvelle entrée, à moins de reprendre manuellement toutes la numérotation qui suit cette nouvelle entrée… Nous décidons de supprimer cette numérotation inutile, voire fautive.
+**Problème.** Certaines entrées de l’inventaire contiennent plusieurs objets (cotes). L’auteur a inscrit une numérotation manuellement pour compter ces entrées. Cette numérotation est problématique : on ne peut pas la contrôler ; on ne peut pas insérer une nouvelle entrée, à moins de reprendre manuellement toute la numérotation qui suit cette nouvelle entrée… Nous décidons de supprimer cette numérotation inutile, voire fautive.
 * Ouvrir la boîte `Chercher et remplacer…`, dans `Autres options`, cocher `Expressions régulières`.
 * Rechercher : `^[0-9]+ *$`
 * Remplacer : `laisser le champ vide`
+* **NB.** Toujours tester son expression régulière avec `Tout rechercher` avant de `Tout remplacer`.
 * Supprimer les paragraphes vides créés (voir ci-dessus).
+
 ![copie écran](./img/6-numerotation-suppr.png "Suppression de la numérotation manuelle")  
 ![copie écran](./img/6-numerotation-suppr-done.png "Numérotation manuelle supprimée")  
 
 ### Inscrire les titres de niveau
 
-#### Titre pricipal
-Le titre de l’inventaire, *Inventaire des porcelaines*, n’est pas un titre de partie, mais bien le titre de mon document. On utilise le style `Titre principal`
+#### Titre principal
+Le titre de l’inventaire, *Inventaire des porcelaines*, n’est pas un titre de partie, mais bien le titre du document. On utilise le style `Titre principal`
 
 **NB.** Pour styler un paragraphe, il n’est pas utile de le sélectionner (le mettre en surbrillance), il suffit de placer le curseur n’importe où dans ce parapraphe, puis de double-cliquer sur le style choisi dans la fenêtre `Styles et formatage`. Le style s’applique bien à tout le paragraphe contexte. La logique est bien sûr différente pour les "styles de caractère".
 
@@ -123,16 +128,16 @@ Penser à **basculer les titres en minuscules**.
   * Il est facile de passer des minuscules aux MAJUSCULES ; l’inverse ne l’est pas…
   * La casse doit être une propriété du style.
 
-ATTENTION aux **titres sur 2 lignes**, ici "Les éléments de services de table". L’auteur a insérer un saut de paragraphe entre les 2 lignes du titre. On obtient logiquement 2 parties (cf le `Navigateur`) dont la première est vide… Pour imprimer un texte sur 2 lignes, il faut insérer un saut de ligne (`MAJ+Entrée`).
+**ATTENTION aux titres sur 2 lignes**, ici "Les éléments de services de table". L’auteur a insérer un saut de paragraphe entre les 2 lignes du titre. On obtient logiquement 2 parties (cf le `Navigateur`) dont la première est vide… Pour imprimer un texte sur 2 lignes, il faut insérer un saut de ligne (`MAJ+Entrée`).
 
-![copie écran](./img/8-titre-2-lignes.png "Un titre sur deux paragraphes")  
-![copie écran](./img/8-titre-2-lignesOK.png "Un titre sur deux lignes")  
+![copie écran](./img/8-titre-2-para.png "Un titre sur deux paragraphes")  
+![copie écran](./img/8-titre-2-lignes.png "Un titre sur deux lignes")  
 ![copie écran](./img/8-titre-minuscules.png "Titre en majuscules")  
 
 #### Titre 2
 Ici, les titres de niveau 2 correspondent aux entrées de l’inventaire que l’auteur avait pris soin de numéroter manuellement. Nous allons exploiter cette numérotation pour styler automatiquement ces titres.  
 Il serait (très) fastidieux de devoir les styler manuellement, un à un, comme nous venons de le faire pour les titres de premier niveau…
-* Rechercher : `^[0-9]+\.`  
+* Rechercher : `^[0-9]+\.` (penser à cocher l’option `Expressions régulières`)  
 Tous les chiffres (`[0-9]`) ou nombres (`+`) suivis d’un points (`\.`) ancrés en début de ligne (`^`).
 * Cliquer sur `Tout rechercher` : toutes les occurrences sont surlignés.
 * **Vérifier que le résultats correspond bien à nos attentes** avant de poursuivre.
@@ -146,7 +151,7 @@ Le style s’applique bien à tous les paragraphes contexte de la sélection (il
 * Clic doit sur `Titre 2`dans la fenêtre `Styles et formatage`.
 * Onglet `Plan & numérotation`, sélectionner `Aucun(e)` dans la liste déroulante `Style de numérotation`.
 
-![copie écran](./img/9-titre2_numerotaiton.png "Désactiver la numérotation automatique des Titres 2")  
+![copie écran](./img/9-titre2_numerotation.png "Désactiver la numérotation automatique des Titres 2")  
 
 #### Titre 3
 Dans notre inventaire, les titres de niveau 3 correspondent aux sous-entrées, identifiées par un numéro d’inventaire. L’auteur a pris soin de poser une numérotation alphabétique que nous allons exploiter pour styler automatiquement ces titres.
