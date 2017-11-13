@@ -226,7 +226,7 @@ Un exemple de mise en forme :
 
 ![copie écran](./img/13-presentation1.png "Exemple de mise en valeur des styles de titre.")
 
-**IMPORTANT.** Si la modification des styles n’a pas d’effet sur la mise en forme, c’est qu’un **formatage direct** a été appliqué (par-dessus) : le formatage direct correspond à toutes la mise en forme appliquées sans avoir recours aux styles, par exemple la mise en italique d’un titre sélectionné. Pour rendre la priorité au style par défaut défini dans le style appliqué, il faut effacer cette couche de formatage direct, par exemple pour les `Titre 2` :
+**IMPORTANT.** Si la modification des styles n’a pas d’effet sur la mise en forme, c’est qu’un **formatage direct** a été appliqué (par-dessus) : le formatage direct correspond à toutes les mises en forme appliquées sans avoir recours aux styles, par exemple la mise en italique d’un titre sélectionné. Pour rendre la priorité au style par défaut défini dans le style appliqué, il faut effacer cette couche de formatage direct, par exemple pour les `Titre 2` :
 * Sélectionner tous les `Titre 2`(cf  `Rechercher & remplacer`, option `styles de paragraphe`)
 * Puis dans le menu principal, en haut de la fenêtre de LibreOffice, cliquer sur `Format > Effacer le formatage direct`.  
 Attention cette manipulation supprime l’enrichissement typographique (italique, gras) qui a pu être ajouté ; il faut donc manipuler avec précaution (risque de perdre de l’information).
@@ -237,19 +237,19 @@ Il reste pas mal de travail. Pour exploiter scientifiquement notre inventaire no
 # Structuration sémantique de l’inventaire
 Les notices de l’inventaire sont (assez) rigoureusement structurées. Pour visualiser la distribution chronologique, nous aurons besoin d’extraire systématiquement les dates exprimées dans le premier champ descriptif (paragraphe suivant le titre de l’entrée). Nous pourrions aussi souhaiter exporter les dimensions, ou la localisation.
 
-Nous allons voir comment identifier chacun de ces champs (comme dans une base de données) grâce aux styles personnalisés.
+Nous allons voir comment identifier chacun de ces champs (comme dans une base de données) grâce aux **styles personnalisés**.
 
 ## Styler les cotes d’inventaire
-### Désactiver les puces
+### 1. Désactiver les puces
 En l’état, la plupart des cotes sont marquées par une puce. On commence par les désactiver.
-* `Tout rechercher` la regex `^Inv\.`
+* `Tout rechercher` : `^Inv\.` (regex)
 * Dans la barre d’outils, cliquer sur l’icône `(Dés)activer les puces`  
 Pour afficher l’icône : `Affichage > Barres d'outils > Formatage`
 
 ![copie écran](./img/14-inv-desactiver-puces1.png "Sélectionner et désactiver les puces.")
 ![copie écran](./img/14-inv-desactiver-puces2.png "Puces désactivées.")
 
-### Style personnalisé
+### 2. Style personnalisé
 Nous avons identifié les titres de niveau grâce aux styles. De la même manière, nous allons marquer les cotes d’inventaire. Évidemment, il n’existe pas par défaut de style "Cote d’inventaire" dans le modèle ODT. Mais nous pouvons créer un tel style pour notre besoin spécifique.
 * Dans la fenêtre `Style et formatage`, clic droit sur un `Style par défaut > Nouveau…`
 * Dans la boîte de dialogue, saisir le nom du nouveau style, ici `_inventaire`.  
