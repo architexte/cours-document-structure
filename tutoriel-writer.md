@@ -9,6 +9,7 @@ Enjeux
 Pré-requis
 * [LibreOffice **5.3.7**](https://fr.libreoffice.org/download/libreoffice-stable/), avec le pack français installé.
 * Nous utiliserons les [expressions régulières](https://help.libreoffice.org/Common/List_of_Regular_Expressions/fr).
+* Récupérer le fichier [inventaire.doc](https://github.com/editions/cours-document-structure/blob/master/inventaire.doc)
 
 **Cas.** Un chercheur a construit un inventaire de porcelaines. Le travail scientifique est rigoureux, mais l’édition ne permet de générer ni une impression de qualité, ni un export (PDF, HTML) convenable. Surtout, nous ne pouvons pas contrôler la qualité des données saisies (nombre de pièces décrites dans l’inventaire, dates, etc.), ou exporter les champs utiles à l’exploitation scientifique de l’inventaire. Nous chercherons par exemple à visualiser la distribution chronologique de cet inventaire.  
 NB. Le document `inventaire.doc` utilisé pour l’exercice est un extrait.
