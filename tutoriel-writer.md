@@ -162,7 +162,7 @@ Tous les lettres (`[a-z]`), éventuellement doubles (`{1,2}`) suivis d’un poin
 * Double-cliquer sur `Titre 3` dans la fenêtre `Styles et formatage`.
 * Idem que précédemment pour supprimer la numérotation automatique attachée au style `Titre 3`.
 
-**Problème.** Certaines sous-entrées n’ont pas été identifiées car l’auteur a parfois utilisé les listes à puces pour les lister (décidément…). Pour bien faire (aboutir ce travail), il faudrait reprendre ces quelques cas manuellement !
+**Problème.** Certaines sous-entrées n’ont pas été identifiées car l’auteur a parfois utilisé les listes à puces pour les lister (décidément…). Pour bien faire (aboutir ce travail), il faudrait **reprendre ces quelques cas manuellement** !
 
 ![copie écran](./img/10-desListes.png "Certaines sous-entrées sont hélas listées…")  
 
@@ -171,29 +171,28 @@ Notre table des matières est assez satisfaisante. Il faudrait la valider manuel
 #### Numérotation automatique
 La numérotation manuelle de l’auteur est potentiellement fautive. Puisque que les entrées sont à présent bien marquées (`Titre 2`), nous pouvons utiliser les propriétés du style `Titre 2` pour numéroter automatiquement les entrées.
 
-**Suppression des numérotations manuelles**
-* Ouvrir la boîte `Chercher et remplacer…`, dans `Autres options`, cocher `Styles de paragraphe`.
-* Rechercher : sélectionner `Titre 2` dans le menu déroulant.
-* Cliquer sur `Tout rechercher` pour sélectionner tous les `Titre 2`
-* Dans `Autres options`, décocher `Styles de paragraphe`.
-* Dans `Autres options`, cocher `Sélection active seulement` et `Expressions régulières` pour ne faire un cherche-remplace que dans la sélection des `Titre 2`établie précédemment.
-* Rechercher : `^[0-9]+\. *`  
+**1. Suppression des numérotations manuelles** (Regex + recherche contextuelle)
+1. Ouvrir la boîte `Chercher et remplacer…`, dans `Autres options`, cocher `Styles de paragraphe`.
+1. Rechercher : sélectionner `Titre 2` dans le menu déroulant.
+1. Cliquer sur `Tout rechercher` pour sélectionner tous les `Titre 2`
+1. Dans `Autres options`, décocher `Styles de paragraphe`.
+1. Dans `Autres options`, cocher `Sélection active seulement` et `Expressions régulières` pour ne faire un cherche-remplace que dans la sélection des `Titre 2`établie précédemment.
+1. Rechercher : `^[0-9]+\. *`  
   Tout les nombres (`[0-9]+`) en début de ligne (`^`) suivis d’un point (`\.`) et d’un ou plusieurs espaces optionnels (`_*`).
-* Remplacer : `laisser le champ vide`
-* Reproduire l’opération pour les `Titre 3` (rechercher `^[a-z]{1,2}\. *`)
-* Corriger manuellement les cas qui résistent (le Navigateur est une vue de contrôle utile, qui permet d’accéder directement aux items à corriger : doucle-clic sur l’item de menu à corriger).
+1. Remplacer : `laisser le champ vide`
+1. Reproduire l’opération pour les `Titre 3` (rechercher `^[a-z]{1,2}\. *`)
+1. Corriger manuellement les cas qui résistent (le Navigateur est une vue de contrôle utile, qui permet d’accéder directement aux items à corriger : doucle-clic sur l’item de menu à corriger).
 
 ![copie écran](./img/11-suppr-numerotation-1.png "Suppression de la numérotation manuelle. 1 : sélection des titres de niveau 2.")
 ![copie écran](./img/11-suppr-numerotation-2.png "Suppression de la numérotation manuelle. 2 : sélection contextuelle de la numérotation")
 ![copie écran](./img/11-suppr-numerotation-3.png "Suppression de la numérotation manuelle. 3 : numérotation supprimée")
 
-**Insérer la numérotation automatique pour les entrées d’inventaire (`Titre 2`)**
+**2. Insertion de la numérotation automatique pour les entrées d’inventaire (`Titre 2`)**
 * Dans la fenêtre `Styles et formatage`, clic droit sur `Titre 2` > `Modifier…`
 * Dans l’onglet `Plan & numérotation`, sélectionner `Numérotation 1` dans le menu déroulant `Niveau de plan`.
 * Cliquer sur `Appliquer`.
 * La numérotation apparaît dans le `Navigateur`.
 
-![copie écran](./img/10-TOCOK.png "La table des matières numérotée apparaît dans le Navigateur.")
 ![copie écran](./img/11-ajoutnumerotation.png "Ajout de la numérotation automatique sur les entrées de l’inventaire.")
 
 #### Générer la table des matières
@@ -208,12 +207,12 @@ Pour mettre à jour la table des matières (après avoir ajouté, corrigé ou su
 
 ![copie écran](./img/12-TOC-2.png "Mettre à jour la table des matières.")
 
-Nous venons de restructurer le texte de manière à rendre intelligible la structure de l’inventaire, permettre la numérotation automatique des entrées (qualité des données). Ce travail permet une validation documentaire de l’inventaire. Nous pourrions effectuer d’autres tâches grâces aux regex, par exemple la normalisation de la ponctuation qui est assez fautive..
+Nous venons de restructurer le texte de manière à rendre intelligible la structure de l’inventaire, permettre la numérotation automatique des entrées (qualité des données). Ce travail permet une validation documentaire de l’inventaire. Nous pourrions effectuer d’autres tâches grâces aux regex, par exemple la normalisation de la ponctuation qui est assez fautive.
 
 À présent nous allons exploiter cette structuration pour produire un document présentable et générer des exports (enjeux éditoriaux).
 
 # (Première) mise en forme grâce aux styles
-Il suffit d’éditer les styles `Titre 1`, `Titre 1`, `Titre 1` (Dans la fenêtre `Styles et formatage`, clic droit sur le nom du style > `Modifier…`) pour améliorer la présentation.
+Il suffit d’éditer les styles `Titre 1`, `Titre 2`, `Titre 3` (Dans la fenêtre `Styles et formatage`, clic droit sur le nom du style > `Modifier…`) pour améliorer la présentation.
 
 Les principaux paramètres sur lesquels jouer :
 * Onglet `Police` : choix de la police, graisse, taille.
@@ -227,9 +226,10 @@ Un exemple de mise en forme :
 
 ![copie écran](./img/13-presentation1.png "Exemple de mise en valeur des styles de titre.")
 
-**IMPORTANT.** Si la modification des styles n’a pas d’effet sur la mise en forme, c’est qu’un formatage local a été appliqué (par-dessus) : le formatage local correspond à toutes la mise en forme appliquées sans avoir recours aux styles, par exemple la mise en italique d’un titre sélectionné. Pour rendre la priorité au style par défaut défini dans le style appliqué, il faut effacer cette couche de formatage direct, par exemple pour les `Titre 2` :
+**IMPORTANT.** Si la modification des styles n’a pas d’effet sur la mise en forme, c’est qu’un **formatage direct** a été appliqué (par-dessus) : le formatage direct correspond à toutes la mise en forme appliquées sans avoir recours aux styles, par exemple la mise en italique d’un titre sélectionné. Pour rendre la priorité au style par défaut défini dans le style appliqué, il faut effacer cette couche de formatage direct, par exemple pour les `Titre 2` :
 * Sélectionner tous les `Titre 2`(cf  `Rechercher & remplacer`, option `styles de paragraphe`)
-* Puis dans le menu principal, en haut de la fenêtre de LibreOffice, cliquer sur `Format > Effacer le formatage direct`. Attention cette manipulation supprimer l’enrichissement typographique (italique, gras) qui a pu être ajouté ; il faut donc manipuler avec précaution (risque de perdre de l’information).
+* Puis dans le menu principal, en haut de la fenêtre de LibreOffice, cliquer sur `Format > Effacer le formatage direct`.  
+Attention cette manipulation supprime l’enrichissement typographique (italique, gras) qui a pu être ajouté ; il faut donc manipuler avec précaution (risque de perdre de l’information).
 
 Il reste pas mal de travail. Pour exploiter scientifiquement notre inventaire nous avons besoin de mieux structurer encore son contenu.
 
