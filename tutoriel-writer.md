@@ -45,19 +45,19 @@ Quels sont les problèmes ?
 * Afficher la fenêtre **Styles et formatage** : `Affichage > Styles et formatage`
 * Paramétrer la **numérotation des chapitres** : `Outils > Numérotation des chapitres`
   * Attribuer le style *adhoc* à chaque niveau de titre (`Titre 1`pour 1, `Titre 2` pour 2, etc.)
-  * Définir la numérotation et la mise en forme pour chaque niveau de titre (on choisit ici `Nombre : Aucun`). Attention, penser à supprimer les espaces inutiles dans le `Séparateur`.
+  * Définir la numérotation et la mise en forme pour chaque niveau de titre (on choisit ici `Nombre : Aucun`). Attention, penser à supprimer les espaces inutiles autour du `Séparateur`.
 
 ![copie écran](./img/1-numerotation.png "paramétrer la numérotation des chapitres")
 
 ## Nettoyer le document
-Plutôt que de formater manuellement les titre (changement de police, graisse, taille, couleur, etc.), nous utilisons les **styles de paragraphe** pour identifier les parties de notre inventaire.
+Plutôt que de formater manuellement les titres (changement de police, graisse, taille, couleur, etc.), nous utilisons les **styles de paragraphe** pour identifier les parties de l’inventaire.
 
 ### Suppression des paragraphes vides
-**Problème.** Nous avons de nombreux paragraphes vides gênants pour la reprise du document. L’espacement entre paragraphes est une propriété du style de paragraphe (voir plus bas), mais ne doit pas être géré avec ce type de paragraphes vides.  
+**Problème.** Nous avons de nombreux paragraphes vides gênants pour la reprise du document. L’espacement entre paragraphes est une propriété du style de paragraphe (voir plus bas), mais ne doit pas être géré avec des paragraphes vides.  
 Pour supprimer ces paragraphes vides :
 * **Rechercher :** `^$`  
 NB : penser à cocher la case `Expressions régulières` dans les `Autres options`de la boîte `Rechercher & remplacer`.
-* **remplacer :** `laisser le champ vide`
+* **Remplacer :** `laisser le champ vide`
 
 ![copie écran](./img/2-paragraphes-vides.png "supprimer les paragraphes vides")
 
@@ -68,7 +68,7 @@ NB : penser à cocher la case `Expressions régulières` dans les `Autres option
 
 ![copie écran](./img/3-recherche-style-para.png "sélectionner tous les paragraphes de même style")
 
-Une même recherche sur les styles `Titre 1` permet de constater que le style est appliqué pour des entrées d’inventaire (numérotation arabe), mais aussi pour des sous-entrées (numérotation alphabétique), ou des numérotations saisies manuellement. En conséquence, la table des matières visible dans le `Navigateur` est complètement fautive :
+Une même recherche sur les styles `Titre 1` permet de constater que le style est appliqué pour des entrées d’inventaire (numérotation numérique), mais aussi pour des sous-entrées (numérotation alphabétique), ou des numérotations saisies manuellement. En conséquence, la table des matières visible dans le `Navigateur` est complètement fautive :
 
 ![copie écran](./img/3-styles-confus-voirTOC.png "Table des matières fautive à cause des styles Titre 1 non cohérents")
 
